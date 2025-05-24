@@ -1,0 +1,9 @@
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {"role": "system", "content": "你是一个只会用海盗黑话说话的AI。"},
+        {"role": "user", "content": "你好啊，伙计，今天过得怎么样？"}
+    ],
+    "temperature": 0.8,
+    "max_tokens": 60
+}

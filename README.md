@@ -6,7 +6,6 @@
 
 -   **OpenAI API 兼容性**: 模拟 `POST /v1/chat/completions`。
 -   **请求/响应转换**: 将 OpenAI 请求/响应结构与 Gemini 的格式相互转换。
--   **模型映射**: 可配置的从 OpenAI 模型名称（例如 `gpt-3.5-turbo`）到 Gemini 模型名称（例如 `gemini-1.5-flash-latest`）的映射。
 -   **系统提示处理**: 将 OpenAI `system` 消息转换为 Gemini 的 `system_instruction`。
 -   **参数映射**: 映射常用参数，如 `temperature`, `max_tokens`, `top_p`, `stop_sequences`。
 -   **CORS 支持**: 可配置的跨源资源共享，用于前端集成。
@@ -60,18 +59,9 @@
         SERVER_HOST="127.0.0.1"
         SERVER_PORT="3000"
 
-        # 模型映射 (OpenAI 模型名 -> Gemini 模型名)
-        # 确保这是一个有效的 JSON 字符串
-        MODEL_MAPPING='{"gpt-3.5-turbo": "gemini-1.5-flash-latest", "gpt-4": "gemini-1.5-pro-latest"}'
-
-        # CORS 允许的源 (JSON 字符串数组)
-        # 添加您的前端应用 (如 Screenpipe) 的 URL
-        ALLOWED_ORIGINS='["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:8000"]'
         ```
     -   **重要提示**：
         -   将 `YOUR_GEMINI_API_KEY_HERE` 替换为您的实际 Gemini API 密钥。
-        -   如果您需要不同或额外的模型转换，请更新 `MODEL_MAPPING`。
-        -   更新 `ALLOWED_ORIGINS` 以包含您的前端应用程序（例如 Screenpipe）的源（协议、主机和端口），以允许跨域请求。
 
 ## 运行服务
 
